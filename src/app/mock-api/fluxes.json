@@ -9,7 +9,6 @@
         "name": "www.clubic.com",
         "url": "http:\/\/www.clubic.com",
         "flux": [
-          null,
           {
             "id": 15,
             "name": "Clubic.com - Actualit\u00e9 Jeux Vid\u00e9o",
@@ -346,7 +345,6 @@
         "name": "www.nextinpact.com",
         "url": "http:\/\/www.nextinpact.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.nextinpact.com\/rss\/news.xml",
@@ -373,7 +371,6 @@
         "name": "remixjobs.com",
         "url": "http:\/\/remixjobs.com",
         "flux": [
-          null
         ]
       },
       "url": "https:\/\/remixjobs.com\/rss",
@@ -400,7 +397,6 @@
         "name": "www.mon-code.net",
         "url": "http:\/\/www.mon-code.net",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.mon-code.net\/feeds\/rssGlobale",
@@ -439,7 +435,6 @@
             "created_at": "2008-06-11T21:08:59+0200",
             "updated_at": "2016-05-28T08:03:23+0200"
           },
-          null,
           {
             "id": 138,
             "name": "Univers Freebox - Presse",
@@ -511,8 +506,7 @@
             "active": true,
             "new": false,
             "updated_at": "2016-05-27T22:15:20+0200"
-          },
-          null
+          }
         ]
       },
       "url": "http:\/\/feeds2.feedburner.com\/LeJournalduGeek",
@@ -539,7 +533,6 @@
         "name": "www.lesnumeriques.com",
         "url": "http:\/\/www.lesnumeriques.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.lesnumeriques.com\/rss.xml",
@@ -566,7 +559,6 @@
         "name": "www.ariase.com",
         "url": "http:\/\/www.ariase.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.ariase.com\/fr\/news\/ariase_rss.xml",
@@ -603,8 +595,7 @@
             "active": true,
             "new": false,
             "updated_at": "2016-06-02T21:48:23+0200"
-          },
-          null
+          }
         ],
         "created_at": "2011-02-08T22:13:50+0100",
         "updated_at": "2011-02-08T22:13:50+0100"
@@ -644,8 +635,7 @@
             "active": true,
             "new": false,
             "updated_at": "2016-06-02T21:48:51+0200"
-          },
-          null
+          }
         ]
       },
       "url": "http:\/\/www.journaldunet.com\/rss\/",
@@ -672,7 +662,6 @@
         "name": "www.pocketpcfrance.info",
         "url": "http:\/\/www.pocketpcfrance.info",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.pocketpcfrance.info\/rss.asp",
@@ -699,7 +688,6 @@
         "name": "blog.octo.com",
         "url": "http:\/\/blog.octo.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/blog.octo.com\/feed\/",
@@ -726,7 +714,6 @@
         "name": "www.ovh.com",
         "url": "http:\/\/www.ovh.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.ovh.com\/fr\/rss.xml",
@@ -753,7 +740,6 @@
         "name": "www.smartphonefrance.fr",
         "url": "http:\/\/www.smartphonefrance.fr",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.smartphonefrance.fr\/rss.asp",
@@ -780,7 +766,6 @@
         "name": "www.thedarksideofthewebblog.com",
         "url": "http:\/\/www.thedarksideofthewebblog.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.thedarksideofthewebblog.com\/feed\/",
@@ -807,7 +792,6 @@
         "name": "www.futura-sciences.com",
         "url": "http:\/\/www.futura-sciences.com",
         "flux": [
-          null,
           {
             "id": 689,
             "name": "Futura-Sciences.com - Actualit\u00e9s",
@@ -880,7 +864,6 @@
         "name": "www.tux-planet.fr",
         "url": "http:\/\/www.tux-planet.fr",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.tux-planet.fr\/feed\/",
@@ -907,7 +890,6 @@
         "name": "blog.pascal-martin.fr",
         "url": "http:\/\/blog.pascal-martin.fr",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/blog.pascal-martin.fr\/feed\/rss2",
@@ -934,7 +916,6 @@
         "name": "www.viedemerde.fr",
         "url": "http:\/\/www.viedemerde.fr",
         "flux": [
-          null
         ],
         "created_at": "2009-09-11T23:13:10+0200",
         "updated_at": "2009-09-11T23:13:10+0200"
@@ -964,7 +945,6 @@
         "name": "webriver.eu",
         "url": "http:\/\/webriver.eu",
         "flux": [
-          null
         ],
         "created_at": "2013-01-10T10:02:02+0100",
         "updated_at": "2013-01-10T10:02:02+0100"
@@ -994,7 +974,6 @@
         "name": "blog.lepine.pro",
         "url": "http:\/\/blog.lepine.pro",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/blog.lepine.pro\/atom.xml",
@@ -1021,7 +1000,6 @@
         "name": "www.eurosport.fr",
         "url": "http:\/\/www.eurosport.fr",
         "flux": [
-          null,
           {
             "id": 1131,
             "name": "Eurosport.fr - Basketball",
@@ -1138,7 +1116,6 @@
         "name": "gdata.youtube.com",
         "url": "http:\/\/gdata.youtube.com",
         "flux": [
-          null
         ]
       },
       "url": "https:\/\/www.youtube.com\/feeds\/videos.xml?channel_id=UCUaHJ0fTA-1theR8A8Polmw",
@@ -1165,7 +1142,6 @@
         "name": "www.jesuisundev.fr",
         "url": "http:\/\/www.jesuisundev.fr",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.jesuisundev.fr\/feed\/",
@@ -1192,7 +1168,6 @@
         "name": "www.sportauto.fr",
         "url": "http:\/\/www.sportauto.fr",
         "flux": [
-          null
         ],
         "created_at": "2010-08-27T21:16:20+0200",
         "updated_at": "2010-08-27T21:16:20+0200"
@@ -1222,7 +1197,6 @@
         "name": "quebecos.com",
         "url": "http:\/\/quebecos.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/quebecos.com\/?feed=rss2",
@@ -1249,7 +1223,6 @@
         "name": "maxlab.fr",
         "url": "http:\/\/maxlab.fr",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/maxlab.fr\/feed\/",
@@ -1276,7 +1249,6 @@
         "name": "hugeen.com",
         "url": "http:\/\/hugeen.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/hugeen.com\/feed\/",
@@ -1314,7 +1286,6 @@
             "new": false,
             "updated_at": "2016-06-02T21:47:16+0200"
           },
-          null,
           {
             "id": 1519,
             "name": "Korben",
@@ -1352,7 +1323,6 @@
         "name": "www.youtube.com",
         "url": "http:\/\/www.youtube.com",
         "flux": [
-          null
         ]
       },
       "url": "https:\/\/www.youtube.com\/feeds\/videos.xml?channel_id=UCb-D560WkMEPE7dwNta_nqA",
@@ -1389,8 +1359,7 @@
             "active": true,
             "new": false,
             "updated_at": "2016-05-28T05:00:47+0200"
-          },
-          null
+          }
         ]
       },
       "url": "http:\/\/www.presse-citron.net\/feed\/",
@@ -1417,7 +1386,6 @@
         "name": "www.stargate-fusion.com",
         "url": "http:\/\/www.stargate-fusion.com",
         "flux": [
-          null
         ],
         "created_at": "2009-09-11T23:17:14+0200",
         "updated_at": "2009-09-11T23:17:14+0200"
@@ -1447,7 +1415,6 @@
         "name": "php-internals.afup.org",
         "url": "http:\/\/php-internals.afup.org",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/php-internals.afup.org\/feed\/",
@@ -1474,7 +1441,6 @@
         "name": "www.blog-nouvelles-technologies.fr",
         "url": "http:\/\/www.blog-nouvelles-technologies.fr",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/feeds2.feedburner.com\/design-folio",
@@ -1511,8 +1477,7 @@
             "active": true,
             "new": false,
             "updated_at": "2016-05-26T17:29:41+0200"
-          },
-          null
+          }
         ]
       },
       "url": "http:\/\/www.starwars-universe.com\/general\/rss.xml",
@@ -1539,7 +1504,6 @@
         "name": "www.web-astuces.net",
         "url": "http:\/\/www.web-astuces.net",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.web-astuces.net\/feed",
@@ -1566,7 +1530,6 @@
         "name": "web.developpez.com",
         "url": "http:\/\/web.developpez.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/web.developpez.com\/index\/rss",
@@ -1593,7 +1556,6 @@
         "name": "www.scifi-universe.com",
         "url": "http:\/\/www.scifi-universe.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.scifi-universe.com\/actualites\/rss",
@@ -1620,7 +1582,6 @@
         "name": "www.webrankinfo.com",
         "url": "http:\/\/www.webrankinfo.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.webrankinfo.com\/rss.php",
@@ -1647,7 +1608,6 @@
         "name": "www.alsacreations.com",
         "url": "http:\/\/www.alsacreations.com",
         "flux": [
-          null,
           {
             "id": 1411,
             "name": "Alsacreations.com - Apprendre",
@@ -1685,7 +1645,6 @@
         "name": "www.unificationfrance.com",
         "url": "http:\/\/www.unificationfrance.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.unificationfrance.com\/spip.php?page=backend",
@@ -1712,7 +1671,6 @@
         "name": "community.arcgames.com",
         "url": "http:\/\/community.arcgames.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/community.arcgames.com\/fr\/news\/star-trek-online\/rss",
@@ -1749,8 +1707,7 @@
             "active": true,
             "new": false,
             "updated_at": "2016-05-28T11:55:07+0200"
-          },
-          null
+          }
         ]
       },
       "url": "http:\/\/www.alsacreations.com\/rss\/apprendre.xml",
@@ -1777,7 +1734,6 @@
         "name": "www.ffworld.com",
         "url": "http:\/\/www.ffworld.com",
         "flux": [
-          null
         ]
       },
       "url": "http:\/\/www.ffworld.com\/fil.rss",
@@ -1804,7 +1760,6 @@
         "name": "www.jeuxvideo.com",
         "url": "http:\/\/www.jeuxvideo.com",
         "flux": [
-          null,
           {
             "id": 949,
             "name": "JeuxVid\u00e9o.com - DS",
@@ -1952,7 +1907,6 @@
         "name": "Meanjs.fr",
         "url": "http:\/\/www.meanjs.fr",
         "flux": [
-          null
         ],
         "created_at": "2016-10-06T23:51:56+0200",
         "updated_at": "2016-10-06T23:51:56+0200"

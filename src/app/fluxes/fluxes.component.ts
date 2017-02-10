@@ -38,9 +38,8 @@ export interface flux {
   name: string;
   slug: string;
   site: site;
-  date: boolean;
-  category: boolean;
-  description: boolean;
+  url: string;
+  description: string;
   display: boolean;
   active: boolean;
   'new': boolean;

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 import { AlertModule } from 'ng2-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +20,8 @@ import { FluxesModule } from './fluxes/fluxes.module';
     HttpModule,
     AppRoutingModule,
     FluxesModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+//    MaterialModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
