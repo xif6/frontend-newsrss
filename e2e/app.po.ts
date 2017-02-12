@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class Angular2Page {
+export class FrontendNewsrssPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,10 +1,10 @@
-import { Angular2Page } from './app.po';
+import { FrontendNewsrssPage } from './app.po';
 
-describe('angular2 App', function() {
-  let page: Angular2Page;
+describe('frontend-newsrss App', function() {
+  let page: FrontendNewsrssPage;
 
   beforeEach(() => {
-    page = new Angular2Page();
+    page = new FrontendNewsrssPage();
   });
 
   it('should display message saying app works', () => {
