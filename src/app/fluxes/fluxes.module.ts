@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material';
 
 import { FluxesComponent } from './fluxes.component';
 import { FluxesService } from './fluxes.service';
+import { FluxItemsFilterPipe } from './flux-items-filter.pipe';
 
 @NgModule({
   imports: [
@@ -13,7 +14,10 @@ import { FluxesService } from './fluxes.service';
     HttpModule,
     MaterialModule.forRoot(),
   ],
-  declarations: [ FluxesComponent ],
+  declarations: [
+    FluxesComponent,
+    FluxItemsFilterPipe,
+  ],
   providers: [ FluxesService ]
 })
 export class FluxesModule { }

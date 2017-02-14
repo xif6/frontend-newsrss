@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FluxesService } from './fluxes.service';
+import { Items, Fluxes } from '../shared/fluxes';
 
 @Component({
   selector: 'app-fluxes',
@@ -9,7 +10,8 @@ import { FluxesService } from './fluxes.service';
 })
 export class FluxesComponent implements OnInit {
 
-  protected fluxes: fluxes[];
+  protected fluxes: Fluxes[];
+  protected items: Items[];
 
   constructor(protected FluxesService: FluxesService) { }
 
@@ -19,51 +21,12 @@ export class FluxesComponent implements OnInit {
         res => this.fluxes = res,
         err => console.error(err.status)
       );
+
+    this.FluxesService.getItemsFromAPI()
+      .subscribe(
+        res => this.items = res,
+        err => console.error(err.status)
+      );
   }
 
 }
-
-export interface fluxes {
-  flux: flux;
-  date: boolean;
-  category: boolean;
-  description: boolean;
-  flux_nb: number;
-  rank: number;
-  style: string;
-}
-
-export interface flux {
-  id: number;
-  name: string;
-  slug: string;
-  site: site;
-  url: string;
-  description: string;
-  display: boolean;
-  active: boolean;
-  'new': boolean;
-  created_at: Date;
-  updated_at: Date;
-}
-
-export interface site {
-  id: number;
-  name: string;
-  url: string;
-  flux: item[];
-  updated_at: Date;
-}
-
-export interface item {
-  id: number;
-  name: string;
-  slug: string;
-  url: string;
-  description?: string;
-  display: boolean;
-  active: boolean;
-  'new': boolean;
-  updated_at: Date;
-}
-

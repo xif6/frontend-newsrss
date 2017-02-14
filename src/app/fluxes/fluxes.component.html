@@ -16,12 +16,11 @@
 
     <div class="panel-body">
 
-      <!--{{flux.flux.site.flux | json}}-->
-
-      <div *ngFor="let item of flux.flux.site.flux">
+      <!--<div *ngFor="let item of items['flux_' + flux.flux.id]">-->
+      <div *ngFor="let item of (items | fluxItemsFilter: flux.flux.id)">
         <a href="{{ item.url }}" target="_blank">
-          <span>{{ item.updated_at  | date: 'dd/MM hh:mm' }} : </span>
-          {{ item.name }}
+          <span>{{ item.date  | date: 'dd/MM HH:mm' }} : </span>
+          {{ item.title }}
         </a>
       </div>
 
