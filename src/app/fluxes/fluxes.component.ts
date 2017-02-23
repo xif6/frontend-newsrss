@@ -19,13 +19,13 @@ export class FluxesComponent implements OnInit {
     this.FluxesService.getFluxesFromAPI()
       .subscribe(
         res => this.fluxes = res,
-        err => console.error(err.status)
+        err => console.error(err)
       );
 
     this.FluxesService.getItemsFromAPI()
       .subscribe(
         res => this.items = res,
-        err => console.error(err.status)
+        err => console.error(err)
       );
   }
 

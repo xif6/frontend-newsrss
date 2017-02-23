@@ -1,3 +1,4 @@
+<h2>FLUXES</h2>
 <div class="col-fluid col-fluid-xl-4 col-fluid-lg-3 col-fluid-md-2 col-fluid-sm-1">
   <div *ngFor="let flux of fluxes" class="panel panel-{{ flux.style || 'default'}} col-fluid-cell"
        id="id-{{ flux.flux.id }}">
@@ -16,7 +17,7 @@
 
     <div class="panel-body">
 
-      <!--<div *ngFor="let item of items['flux_' + flux.flux.id]">-->
+
       <div *ngFor="let item of (items | fluxItemsFilter: flux.flux.id)">
         <a href="{{ item.url }}" target="_blank">
           <span>{{ item.date  | date: 'dd/MM HH:mm' }} : </span>
