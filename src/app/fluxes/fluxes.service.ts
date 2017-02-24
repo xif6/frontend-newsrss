@@ -14,7 +14,7 @@ export class FluxesService {
 
   getFluxesFromAPI() {
     // return this.authHttp.get('http://sf28.newsrss.net/user/fluxes')
-    return this.authHttp.get('app/mock-api/fluxes.json')
+    return this.authHttp.get('/assets/mock-api/fluxes.json')
     //.do(x => console.log(x))
       .map(fluxes => fluxes.json())
       .catch(error => {
@@ -25,7 +25,7 @@ export class FluxesService {
 
   getItemsFromAPI() {
     // return this.authHttp.get('http://sf28.newsrss.net/user/items')
-    return this.authHttp.get('app/mock-api/items.json')
+    return this.authHttp.get('/assets/mock-api/items.json')
     //.do(x => console.log(x))
       .map(items => items.json())
       .catch(error => {
@@ -35,7 +35,7 @@ export class FluxesService {
 
   /*
    getItemsFromAPI() {
-   return this.authHttp.get('app/mock-api/items-array.json')
+   return this.authHttp.get('/assets/mock-api/items-array.json')
    //.do(x => console.log(x))
    .map(items => items.json())
    .catch(error => {
