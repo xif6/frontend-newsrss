@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams, Response } from '@angular/http';
 import { tokenNotExpired } from 'angular2-jwt';
-import { Observable } from "rxjs";
 
 @Injectable()
 export class AuthService {
@@ -12,10 +11,10 @@ export class AuthService {
   public login(username, password) {
     console.log('auth');
 
-    let body = new URLSearchParams();
+    const body = new URLSearchParams();
     body.set('_username', username);
     body.set('_password', password);
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http.post(

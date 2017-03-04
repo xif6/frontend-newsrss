@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Items, Item } from '../shared/fluxes';
+import { Item } from '../shared/fluxes';
 
 @Pipe({
   name: 'fluxItemsFilter'
