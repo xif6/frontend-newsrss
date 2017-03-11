@@ -16,13 +16,13 @@ export class FluxesComponent implements OnInit {
   constructor(protected FluxesService: FluxesService) { }
 
   ngOnInit() {
-    this.FluxesService.getFluxesFromAPI()
+    this.FluxesService.getFluxes()
       .subscribe(
         res => this.fluxes = res,
         err => console.error(err)
       );
 
-    this.FluxesService.getItemsFromAPI()
+    this.FluxesService.getItems()
       .subscribe(
         res => this.items = res,
         err => console.error(err)
