@@ -23,12 +23,12 @@ export class AuthService {
       );
   }
 
-  static authenticated() {
+  authenticated() {
     return tokenNotExpired();
   }
 
 
-  static logout() {
+  logout() {
     localStorage.removeItem('id_token');
   }
 }
