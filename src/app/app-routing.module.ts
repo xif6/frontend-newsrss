@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FluxesComponent } from './fluxes/fluxes.component';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './login/login.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+      {
+        path: 'subscribe',
+        component: SubscribeComponent,
       },
     ]
   },

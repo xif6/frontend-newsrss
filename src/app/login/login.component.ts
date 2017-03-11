@@ -3,13 +3,14 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import { LoginDialogComponent } from './login-dialog.component';
+import { MdDialog } from '@angular/material';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
-  })
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
 export class LoginComponent implements OnInit {
 
   loading = false;
@@ -21,14 +22,14 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private location: Location,
     private formBuilder: FormBuilder,
-    public dialog: MdDialog
+    private dialog: MdDialog
   ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-        'username': ['', [Validators.required, Validators.minLength(3)]],
-        'password': ['', Validators.required]
-      });
+      'username': ['', [Validators.required, Validators.minLength(3)]],
+      'password': ['', Validators.required]
+    });
   }
 
   login() {
@@ -37,7 +38,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         () => {
           console.log(this.router);
-          this.router.navigate(['/fluxes']);
+          // this.router.navigate(['/fluxes']);
           // this.location.back();
         },
         () => {
@@ -45,5 +46,12 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         }
       );
+  }
+
+  openDialog() {
+    let dialogRef = this.dialog.open(LoginDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 }
