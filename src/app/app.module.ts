@@ -38,7 +38,7 @@ export function authHttpServiceFactory(
     AppRoutingModule,
     FluxesModule,
     AlertModule.forRoot(),
-   MaterialModule.forRoot(),
+    MaterialModule,
   ],
   providers: [
     {
