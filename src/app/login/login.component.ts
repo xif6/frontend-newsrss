@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ModalDirective } from 'ng2-bootstrap';
+
 import { AuthService } from '../auth/auth.service';
-import { LoginDialogComponent } from './login-dialog.component';
-import { MdDialog } from '@angular/material';
+import { AuthGuardService } from '../auth/auth-guard.service';
 
 @Component({
   selector: 'app-login',
@@ -13,23 +13,31 @@ import { MdDialog } from '@angular/material';
 })
 export class LoginComponent implements OnInit {
 
+  @ViewChild('modal') protected modal: ModalDirective;
+
   loading = false;
   error: string;
   loginForm: FormGroup;
+  protected redirect: string;
 
   constructor(
     private authService: AuthService,
+    private authGuardService: AuthGuardService,
     private router: Router,
-    private location: Location,
-    private formBuilder: FormBuilder,
-    private dialog: MdDialog
-  ) { }
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       'username': ['', [Validators.required, Validators.minLength(3)]],
       'password': ['', Validators.required]
     });
+    this.authGuardService.mustAuthenticate$.subscribe(
+      route => {
+        this.redirect = route;
+        this.show();
+      }
+    );
   }
 
   login() {
@@ -38,8 +46,10 @@ export class LoginComponent implements OnInit {
       .subscribe(
         () => {
           console.log(this.router);
-          // this.router.navigate(['/fluxes']);
-          // this.location.back();
+          this.hide();
+          if (this.redirect) {
+            this.router.navigate([this.redirect]);
+          }
         },
         () => {
           this.error = 'Username or password is incorrect';
@@ -48,10 +58,11 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  openDialog() {
-    let dialogRef = this.dialog.open(LoginDialogComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
+  show(route = null) {
+    this.modal.show();
+  }
+
+  hide() {
+    this.modal.hide();
   }
 }

@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './login/login.component';
-import { MdDialogRef, MdDialog } from '@angular/material';
-import { LoginDialogComponent } from './login/login-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +11,9 @@ import { LoginDialogComponent } from './login/login-dialog.component';
 })
 export class AppComponent {
   title = 'app works!';
-  selectedOption: string;
+  @ViewChild('modal') protected loginModal: LoginComponent;
 
-  constructor(protected authService: AuthService, public dialog: MdDialog) {}
+  constructor(protected authService: AuthService, protected router: Router) {}
 
   hasAuthToken() {
     return this.authService.authenticated();
@@ -22,13 +21,10 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/']);
   }
 
   login() {
-    // this.loginComponent.loginModal();
-    let dialogRef = this.dialog.open(LoginDialogComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      this.selectedOption = result;
-    });
+    this.loginModal.show();
   }
 }

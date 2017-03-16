@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import { AlertModule } from 'ng2-bootstrap';
+
+import { AlertModule } from 'ng2-bootstrap/alert';
+import { ModalModule } from 'ng2-bootstrap/modal';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +14,6 @@ import { FluxesModule } from './fluxes/fluxes.module';
 
 import { AuthService } from './auth/auth.service';
 import { LoginComponent, } from './login/login.component';
-import { LoginDialogComponent } from './login/login-dialog.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 
@@ -29,7 +29,6 @@ export function authHttpServiceFactory(
     AppComponent,
     LoginComponent,
     SubscribeComponent,
-    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,7 @@ export function authHttpServiceFactory(
     AppRoutingModule,
     FluxesModule,
     AlertModule.forRoot(),
-    MaterialModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     {
@@ -49,7 +48,6 @@ export function authHttpServiceFactory(
     AuthService,
     AuthGuardService
   ],
-  entryComponents: [LoginDialogComponent],
   bootstrap: [AppComponent]
 })
 

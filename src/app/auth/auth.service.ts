@@ -5,8 +5,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthService {
 
-  constructor(protected http: Http) {
-  }
+  constructor(protected http: Http) { }
 
   login(username, password) {
     const body = new URLSearchParams();

@@ -18,8 +18,8 @@
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="fluxes">Fluxes</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!hasAuthToken()"><app-login></app-login></li>
-        <li *ngIf="hasAuthToken()"><a (click)="logout()" href="#">Logout</a></li>
+        <li *ngIf="!hasAuthToken()"><a (click)="login()">Login</a></li>
+        <li *ngIf="hasAuthToken()"><a (click)="logout()">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
@@ -28,3 +28,4 @@
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>
+<app-login #modal></app-login>
