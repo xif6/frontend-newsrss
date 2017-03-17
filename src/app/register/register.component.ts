@@ -9,10 +9,10 @@ import { EMAIL_REGEXP } from '../shared/pattern';
 
 @Component({
   selector: 'app-subscribe',
-  templateUrl: 'registration.component.html',
-  styleUrls: ['registration.component.css']
+  templateUrl: 'register.component.html',
+  styleUrls: ['register.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   @ViewChild('modal') protected modal: ModalDirective;
 
@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
 
   submit() {
     this.loading = true;
-    this.authService.subscribe(this.form.value)
+    this.authService.register(this.form.value)
       .subscribe(
         () => {
           console.log(this.router);
@@ -55,7 +55,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   show() {
-    console.log('sub');
     this.modal.show();
   }
 

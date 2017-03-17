@@ -15,7 +15,7 @@ import { FluxesModule } from './fluxes/fluxes.module';
 import { AuthService } from './auth/auth.service';
 import { LoginComponent, } from './login/login.component';
 import { AuthGuardService } from './auth/auth-guard.service';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegisterComponent } from './register/register.component';
 
 export function authHttpServiceFactory(
   http: Http,
@@ -28,7 +28,7 @@ export function authHttpServiceFactory(
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -65,4 +65,9 @@ export class LoginComponent implements OnInit {
   hide() {
     this.modal.hide();
   }
+
+  wantToRegister() {
+    this.hide();
+    this.authService.openRegister();
+  }
 }

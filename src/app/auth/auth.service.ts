@@ -1,10 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams, Response } from '@angular/http';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/do';
+
 import { User } from '../shared/user';
 
 @Injectable()
 export class AuthService {
+
+  // Observable sources
+  protected wantToRegister = new Subject<any>();
+
+  // Observable streams
+  wantToRegister$ = this.wantToRegister.asObservable();
 
   constructor(protected http: Http) { }
 
@@ -23,7 +32,7 @@ export class AuthService {
       );
   }
 
-  subscribe(user: User) {
+  register(user: User) {
     console.log(user);
     const body = new URLSearchParams();
     body.set('username', user.username);
@@ -32,7 +41,7 @@ export class AuthService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    return this.http.post('http://sf28.newsrss.net/api/registration', body, {headers: headers})
+    return this.http.post('http://sf28.newsrss.net/api/register', body, {headers: headers})
       .map((res: Response) => res.json())
       .do(
         authResult => { localStorage.setItem('id_token', authResult.token); },
@@ -47,5 +56,9 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('id_token');
+  }
+
+  openRegister() {
+    this.wantToRegister.next();
   }
 }

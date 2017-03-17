@@ -3,7 +3,7 @@
     <div class="modal-content">
       <form (ngSubmit)="submit()" [formGroup]="form">
         <div class="modal-header">
-          <h4 class="modal-title">Registration</h4>
+          <h4 class="modal-title">Register</h4>
         </div>
         <div class="modal-body">
           <div class="form-group">
@@ -23,7 +23,7 @@
         </div>
         <div class="modal-footer">
           <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-          <button [disabled]="!form.valid || loading" class="btn btn-primary">Registration</button>
+          <button [disabled]="!form.valid || loading" class="btn btn-primary">Register</button>
         </div>
       </form>
     </div>

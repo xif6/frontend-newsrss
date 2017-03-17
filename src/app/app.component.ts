@@ -1,21 +1,27 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app works!';
   @ViewChild('loginModal') protected loginModal: LoginComponent;
-  @ViewChild('registrationModal') protected registrationModal: RegistrationComponent;
+  @ViewChild('registerModal') protected registerModal: RegisterComponent;
 
   constructor(protected authService: AuthService, protected router: Router) {}
+
+  ngOnInit() {
+    this.authService.wantToRegister$.subscribe(
+      () => this.register()
+    );
+  }
 
   hasAuthToken() {
     return this.authService.authenticated();
@@ -30,7 +36,7 @@ export class AppComponent {
     this.loginModal.show();
   }
 
-  subscribe() {
-    this.registrationModal.show();
+  register() {
+    this.registerModal.show();
   }
 }
