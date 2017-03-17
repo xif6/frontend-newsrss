@@ -1,7 +1,7 @@
 <div class="modal fade" bsModal #modal="bs-modal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <form (ngSubmit)="submit()" [formGroup]="form">
         <div class="modal-header">
           <h4 class="modal-title">Login</h4>
         </div>
@@ -19,7 +19,7 @@
         </div>
         <div class="modal-footer">
           <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-          <button [disabled]="!loginForm.valid || loading" class="btn btn-primary">Login</button>
+          <button [disabled]="!form.valid || loading" class="btn btn-primary">Login</button>
         </div>
       </form>
     </div>

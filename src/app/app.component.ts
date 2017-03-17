@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 })
 export class AppComponent {
   title = 'app works!';
-  @ViewChild('modal') protected loginModal: LoginComponent;
+  @ViewChild('loginModal') protected loginModal: LoginComponent;
+  @ViewChild('registrationModal') protected registrationModal: RegistrationComponent;
 
   constructor(protected authService: AuthService, protected router: Router) {}
 
@@ -26,5 +28,9 @@ export class AppComponent {
 
   login() {
     this.loginModal.show();
+  }
+
+  subscribe() {
+    this.registrationModal.show();
   }
 }

@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ModalDirective } from 'ng2-bootstrap';
 
 import { AuthService } from '../auth/auth.service';
 import { AuthGuardService } from '../auth/auth-guard.service';
+import { EMAIL_REGEXP } from '../shared/pattern';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-subscribe',
+  templateUrl: 'registration.component.html',
+  styleUrls: ['registration.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
 
   @ViewChild('modal') protected modal: ModalDirective;
 
@@ -25,24 +26,19 @@ export class LoginComponent implements OnInit {
     private authGuardService: AuthGuardService,
     private router: Router,
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
+      'email': ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
       'username': ['', [Validators.required, Validators.minLength(3)]],
       'password': ['', Validators.required]
     });
-    this.authGuardService.mustAuthenticate$.subscribe(
-      route => {
-        this.redirect = route;
-        this.show();
-      }
-    );
   }
 
   submit() {
     this.loading = true;
-    this.authService.login(this.form.value)
+    this.authService.subscribe(this.form.value)
       .subscribe(
         () => {
           console.log(this.router);
@@ -58,7 +54,8 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  show(route = null) {
+  show() {
+    console.log('sub');
     this.modal.show();
   }
 
@@ -66,3 +63,5 @@ export class LoginComponent implements OnInit {
     this.modal.hide();
   }
 }
+
+

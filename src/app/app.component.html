@@ -19,6 +19,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!hasAuthToken()"><a (click)="login()">Login</a></li>
+        <li *ngIf="!hasAuthToken()"><a (click)="subscribe()">Registration</a></li>
         <li *ngIf="hasAuthToken()"><a (click)="logout()">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -28,4 +29,5 @@
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>
-<app-login #modal></app-login>
+<app-login #loginModal></app-login>
+<app-subscribe #registrationModal></app-subscribe>

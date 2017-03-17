@@ -1,9 +1,9 @@
 <div class="modal fade" bsModal #modal="bs-modal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <form (ngSubmit)="subscribe()" [formGroup]="subscribeForm">
+      <form (ngSubmit)="submit()" [formGroup]="form">
         <div class="modal-header">
-          <h4 class="modal-title">Subscribe</h4>
+          <h4 class="modal-title">Registration</h4>
         </div>
         <div class="modal-body">
           <div class="form-group">
@@ -23,7 +23,7 @@
         </div>
         <div class="modal-footer">
           <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-          <button [disabled]="!subscribeForm.valid || loading" class="btn btn-primary">Subscribe</button>
+          <button [disabled]="!form.valid || loading" class="btn btn-primary">Registration</button>
         </div>
       </form>
     </div>
