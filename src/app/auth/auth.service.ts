@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams, Response } from '@angular/http';
-import { tokenNotExpired } from 'angular2-jwt';
+import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/do';
 
@@ -41,7 +41,8 @@ export class AuthService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    return this.http.post('http://sf28.newsrss.net/api/register', body, {headers: headers})
+    // return this.http.post('http://sf28.newsrss.net/api/register', body, {headers: headers})
+    return this.http.post('/assets/mock-api/empty.json', body, {headers: headers})
       .map((res: Response) => res.json())
       .do(
         authResult => { localStorage.setItem('id_token', authResult.token); },

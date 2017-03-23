@@ -26,4 +26,7 @@ export class AuthGuardService implements CanActivate {
     }
   }
 
+  openLogin() {
+    this.mustAuthenticate.next();
+  }
 }

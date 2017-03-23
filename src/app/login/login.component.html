@@ -1,9 +1,9 @@
-<div class="modal fade" bsModal #modal="bs-modal">
+<div class="modal" bsModal #modal="bs-modal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <form (ngSubmit)="submit()" [formGroup]="form">
         <div class="modal-header">
-          <h4 class="modal-title">Login</h4>
+          <h4 class="modal-title">Login <span>or <a (click)="wantToRegister()">Register</a></span></h4>
         </div>
         <div class="modal-body">
           <div class="form-group">
@@ -22,7 +22,6 @@
           <button [disabled]="!form.valid || loading" class="btn btn-primary">Login</button>
         </div>
       </form>
-      <a (click)="wantToRegister()">Register</a>
     </div>
   </div>
 </div>

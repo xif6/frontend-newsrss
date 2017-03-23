@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
           }
         },
         () => {
-          this.error = 'Username or password is incorrect';
+          this.error = 'Error';
           this.loading = false;
         }
       );
@@ -60,6 +60,11 @@ export class RegisterComponent implements OnInit {
 
   hide() {
     this.modal.hide();
+  }
+
+  wantToLogin() {
+    this.hide();
+    this.authGuardService.openLogin();
   }
 }
 

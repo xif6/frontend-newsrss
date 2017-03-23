@@ -8,3 +8,7 @@ body {
 a {
   cursor: pointer;
 }
+
+.modal-title span {
+  font-size: 60%;
+}
