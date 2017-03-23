@@ -1,0 +1,11 @@
+<div>
+  <a routerLink="/fluxes">← Back</a>
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <div>
+      <div class="form-group">
+        <input type="text" formControlName="q" id="q" class="form-control pull-left" placeholder="RSS feed URL">
+        <button [disabled]="!form.valid" class="btn btn-default pull-right">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
