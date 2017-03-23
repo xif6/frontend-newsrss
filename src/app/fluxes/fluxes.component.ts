@@ -6,7 +6,7 @@ import { Items, Fluxes } from '../shared/fluxes';
 @Component({
   selector: 'app-fluxes',
   templateUrl: './fluxes.component.html',
-  styleUrls: ['./fluxes.component.css']
+  styleUrls: ['fluxes-custom.component.css', './fluxes-custom.component.css']
 })
 export class FluxesComponent implements OnInit {
 
