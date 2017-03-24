@@ -18,6 +18,7 @@ import { AddFluxComponent } from './add-flux/add-flux.component';
 import { FluxItemsFilterPipe } from './fluxes/flux-items-filter.pipe';
 import { FluxesComponent } from './fluxes/fluxes.component';
 import { FluxesService } from './fluxes/fluxes.service';
+import { FluxComponent } from './fluxes/flux.component';
 
 export function authHttpServiceFactory(
   http: Http,
@@ -34,6 +35,7 @@ export function authHttpServiceFactory(
     AddFluxComponent,
     FluxesComponent,
     FluxItemsFilterPipe,
+    FluxComponent,
   ],
   imports: [
     BrowserModule,

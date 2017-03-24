@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AuthHttp } from 'angular2-jwt';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/observable/of';
+import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { User } from '../shared/user';
 import { Fluxes, Items } from '../shared/fluxes';
 
 
@@ -19,6 +18,11 @@ export class FluxesService {
   protected items$: Observable<Items[]>;
 
   constructor(protected authHttp: AuthHttp) {}
+
+  clearCache() {
+    this.fluxes = this.items = null;
+    return this;
+  }
 
   clearCacheFluxes() {
     this.fluxes = null;
@@ -72,10 +76,9 @@ export class FluxesService {
     return this.items$;
   }
 
-  postUser(user: User) {
-    // return this.authHttp.post('http://sf28.newsrss.net/api/user', user)
-    return this.authHttp.post('/empty.json', user)
-      .map(items => items.json())
+  postFlux(q) {
+    return this.authHttp.post('/assets/mock-api/empty.json', q)
+      .map(res => res.json())
       .catch(error => {
         return Observable.throw(error);
       });

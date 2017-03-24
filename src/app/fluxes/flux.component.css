@@ -1,0 +1,229 @@
+.panel-heading .dropdown {
+  vertical-align: baseline;
+}
+
+
+.col-fluid-cell.panel {
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.col-fluid-cell {
+  display: inline-block;
+  width: 100%;
+}
+
+
+/*blue*/
+.panel.panel-bleu > .panel-heading,
+.panel.panel-default.panel-bleu > .panel-heading {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.panel.panel-bleu > .panel-heading a,
+.panel.panel-default.panel-bleu > .panel-heading a {
+  color: #fff;
+}
+
+/*orange*/
+.panel.panel-orange > .panel-heading,
+.panel.panel-default.panel-orange > .panel-heading {
+  background-color: #FF9800;
+  color: #000;
+}
+
+.panel.panel-orange > .panel-heading a,
+.panel.panel-default.panel-orange > .panel-heading a {
+  color: #000;
+}
+
+/*pink*/
+.panel.panel-rose > .panel-heading,
+.panel.panel-default.panel-rose > .panel-heading {
+  background-color: #E91E63;
+  color: #fff;
+}
+
+.panel.panel-rose > .panel-heading a,
+.panel.panel-default.panel-rose > .panel-heading a {
+  color: #fff;
+}
+
+/*light green*/
+.panel.panel-vert > .panel-heading,
+.panel.panel-default.panel-vert > .panel-heading {
+  background-color: #8BC34A;
+  color: #000;
+}
+
+.panel.panel-vert > .panel-heading a,
+.panel.panel-default.panel-vert > .panel-heading a {
+  color: #000;
+}
+
+/*cyan*/
+.panel.panel-turquoise > .panel-heading,
+.panel.panel-default.panel-turquoise > .panel-heading {
+  background-color: #00BCD4;
+  color: #000;
+}
+
+.panel.panel-turquoise > .panel-heading a,
+.panel.panel-default.panel-turquoise > .panel-heading a {
+  color: #000;
+}
+
+/*grey*/
+.panel.panel-gris > .panel-heading,
+.panel.panel-default.panel-gris > .panel-heading {
+  background-color: #9E9E9E;
+  color: #000;
+}
+
+.panel.panel-gris > .panel-heading a,
+.panel.panel-default.panel-gris > .panel-heading a {
+  color: #000;
+}
+
+/*red*/
+.panel.panel-rouge > .panel-heading,
+.panel.panel-default.panel-rouge > .panel-heading {
+  background-color: #F44336;
+  color: #fff;
+}
+
+.panel.panel-rouge > .panel-heading a,
+.panel.panel-default.panel-rouge > .panel-heading a {
+  color: #fff;
+}
+
+/*yellow*/
+.panel.panel-jaune > .panel-heading,
+.panel.panel-default.panel-jaune > .panel-heading {
+  background-color: #FFEB3B;
+  color: #000;
+}
+
+.panel.panel-jaune > .panel-heading a,
+.panel.panel-default.panel-jaune > .panel-heading a {
+  color: #000;
+}
+
+/*purple*/
+.panel.panel-rose_pale > .panel-heading,
+.panel.panel-default.panel-rose_pale > .panel-heading {
+  background-color: #9C27B0;
+  color: #fff;
+}
+
+.panel.panel-rose_pale > .panel-heading a,
+.panel.panel-default.panel-rose_pale > .panel-heading a {
+  color: #fff;
+}
+
+.panel.panel-default > .panel-heading a {
+  color: #000;
+}
+
+.panel-heading * {
+  vertical-align: middle;
+}
+
+.panel > .panel-body span {
+  font-size: .8em;
+  color: #777777;
+}
+
+.panel > .panel-body .today {
+  color: #000;
+  font-weight: bold;
+}
+
+.panel > .panel-body .separator {
+  border-top: 1px solid #bdbdbd;
+}
+
+.panel > .panel-body a {
+  color: #000;
+}
+
+.panel > .panel-body a:active,
+.panel > .panel-body a:focus,
+.panel > .panel-body a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #9C27B0;
+}
+
+.panel > .panel-body a:visited span {
+  color: #bdbdbd;
+}
+.panel > .panel-body a:visited {
+  color: #bdbdbd;
+  text-decoration: none;
+}
+
+.panel-heading {
+  font-weight: bold;
+}
+
+.panel-heading .pull-right .material-icons {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  vertical-align: baseline;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover > .material-icons.rotate,
+.material-icons.rotate:hover {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal-title span {
+  font-size: 60%;
+}

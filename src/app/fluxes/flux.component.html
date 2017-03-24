@@ -1,0 +1,51 @@
+<div class="panel panel-{{ flux.style || 'default'}} col-fluid-cell" id="id-{{ flux.flux.id }}">
+  <div class="panel-heading">
+
+    <a href="{{ flux.flux.site.url }}" target="_blank">{{ flux.flux.name }}</a>
+    <div class="pull-right">
+      <a class="material-icons rotate">refresh</a>
+      <a href="{{ flux.flux.url }}" target="_blank" class="material-icons">rss_feed</a>
+
+<!--      <span dropdown>
+          <a class="material-icons" dropdownToggle>settings</a>
+          <form (ngSubmit)="submit()" [formGroup]="form">
+            <ul dropdownMenu role="menu" aria-labelledby="single-button" class="dropdown-menu-right">
+              <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
+                        <div class="form-group">
+            <label for="username" class="control-label">Username</label>
+
+            <input type="text" formControlName="username" id="username" class="form-control">
+          </div>
+            </ul>
+          </form>
+        </span>-->
+
+      <span dropdown>
+          <a class="material-icons" dropdownToggle>settings</a>
+          <div dropdownMenu role="menu" aria-labelledby="single-button" class="dropdown-menu-right">
+            <div role="menuitem"><a class="dropdown-item" href="#">Action</a></div>
+            <div role="menuitem"><a class="dropdown-item" href="#">Another action</a></div>
+            <div role="menuitem"><a class="dropdown-item" href="#">Something else here</a></div>
+            <div class="divider dropdown-divider"></div>
+            <div role="menuitem"><a class="dropdown-item" href="#">Separated link</a></div>
+          </div>
+        </span>
+
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+    <div *ngFor="let item of (items | fluxItemsFilter: flux.flux.id)">
+      <a href="{{ item.url }}" target="_blank">
+        <span>{{ item.date  | date: 'dd/MM HH:mm' }} : </span>
+        {{ item.title }}
+      </a>
+    </div>
+
+  </div>
+</div>
