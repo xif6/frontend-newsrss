@@ -2,8 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from './auth/auth.service';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { AuthComponent } from './auth/auth.component';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +11,7 @@ import { RegisterComponent } from './register/register.component';
 })
 export class AppComponent implements OnInit {
   title = 'app works!';
-  @ViewChild('loginModal') protected loginModal: LoginComponent;
-  @ViewChild('registerModal') protected registerModal: RegisterComponent;
+  @ViewChild('auth') protected auth: AuthComponent;
 
   constructor(protected authService: AuthService, protected router: Router) {}
 
@@ -33,10 +31,10 @@ export class AppComponent implements OnInit {
   }
 
   login() {
-    this.loginModal.show();
+    this.auth.show('login');
   }
 
   register() {
-    this.registerModal.show();
+    this.auth.show('register');
   }
 }

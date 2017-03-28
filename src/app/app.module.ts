@@ -11,14 +11,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthService } from './auth/auth.service';
-import { LoginComponent, } from './login/login.component';
 import { AuthGuardService } from './auth/auth-guard.service';
-import { RegisterComponent } from './register/register.component';
 import { AddFluxComponent } from './add-flux/add-flux.component';
 import { FluxItemsFilterPipe } from './fluxes/flux-items-filter.pipe';
 import { FluxesComponent } from './fluxes/fluxes.component';
 import { FluxesService } from './fluxes/fluxes.service';
 import { FluxComponent } from './fluxes/flux.component';
+import { AuthComponent } from './auth/auth.component';
 
 export function authHttpServiceFactory(
   http: Http,
@@ -30,12 +29,11 @@ export function authHttpServiceFactory(
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     AddFluxComponent,
     FluxesComponent,
     FluxItemsFilterPipe,
     FluxComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
