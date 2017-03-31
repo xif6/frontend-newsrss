@@ -33,7 +33,6 @@ export class AuthService {
   }
 
   register(user: User) {
-    console.log(user);
     const body = new URLSearchParams();
     body.set('username', user.username);
     body.set('password', user.password);

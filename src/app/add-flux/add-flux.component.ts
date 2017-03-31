@@ -27,7 +27,6 @@ export class AddFluxComponent implements OnInit {
       () => this.fluxesService.clearCache(),
       err => {this.fluxesService.clearCache(); console.error(err);}
     );
-    console.log(this.form);
   }
 
 }

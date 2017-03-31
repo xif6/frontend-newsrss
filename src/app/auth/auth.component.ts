@@ -5,7 +5,6 @@ import { ModalDirective } from 'ng2-bootstrap';
 
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
-import { EMAIL_REGEXP } from '../shared/pattern';
 
 @Component({
   selector: 'app-auth',
@@ -37,7 +36,7 @@ export class AuthComponent implements OnInit {
     });
 
     this.formRegister = this.formBuilder.group({
-      'email': ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
+      'email': ['', [Validators.required, Validators.email]],
       'username': ['', [Validators.required, Validators.minLength(3)]],
       'password': ['', Validators.required]
     });
@@ -56,7 +55,6 @@ export class AuthComponent implements OnInit {
     this.authService.login(this.formLogin.value)
       .subscribe(
         () => {
-          console.log(this.router);
           this.hide();
           if (this.redirect) {
             this.router.navigate([this.redirect]);
@@ -74,7 +72,6 @@ export class AuthComponent implements OnInit {
     this.authService.register(this.formRegister.value)
       .subscribe(
         () => {
-          console.log(this.router);
           this.hide();
           if (this.redirect) {
             this.router.navigate([this.redirect]);
