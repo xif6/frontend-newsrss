@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AlertModule, ModalModule, BsDropdownModule } from 'ng2-bootstrap';
+import { AlertModule, ModalModule, BsDropdownModule } from 'ngx-bootstrap';
 import { ClickOutsideModule } from 'ng-click-outside';
 
 import { AppRoutingModule } from './app-routing.module';

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { BsDropdownToggleDirective } from 'ngx-bootstrap';
 
 import { Fluxes, Items } from '../shared/fluxes';
 
@@ -12,6 +13,8 @@ export class FluxComponent implements OnInit {
 
   protected form: FormGroup;
   protected isOpen = false;
+
+  @ViewChild('bsDropdownToggle') protected bsDropdownToggle: BsDropdownToggleDirective;
 
   @Input() flux: Fluxes;
   @Input() items: Items;
@@ -73,15 +76,9 @@ export class FluxComponent implements OnInit {
     event.stopPropagation();
   }
 
-  toggleDropdown(event: MouseEvent) {
-    event.preventDefault();
-    event.stopPropagation();
-    this.isOpen = !this.isOpen;
-  }
-
   submit() {
     console.log(this.form.value);
-    this.isOpen = false;
+    this.bsDropdownToggle.onEsc();
   }
 
 }

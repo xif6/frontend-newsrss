@@ -2,8 +2,12 @@
   vertical-align: baseline;
 }
 
-.dropdown-menu-right {
-  right: -32px;
+[dropdown] {
+  position: relative;
+}
+
+form.dropdown-menu-right {
+  padding: 15px 15px 0;
 }
 
 .dropdown-menu.form-horizontal {
