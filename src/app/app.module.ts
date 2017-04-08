@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AlertModule, ModalModule, BsDropdownModule } from 'ng2-bootstrap';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -35,6 +36,7 @@ import { AuthModule } from './auth/auth.module';
     AlertModule.forRoot(),
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
+    ClickOutsideModule,
   ],
   providers: [
     FluxesService

@@ -2,6 +2,13 @@
   vertical-align: baseline;
 }
 
+.dropdown-menu-right {
+  right: -32px;
+}
+
+.dropdown-menu.form-horizontal {
+  width: 300px;
+}
 
 .col-fluid-cell.panel {
   margin-top: 6px;
