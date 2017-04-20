@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { FluxesService } from './fluxes.service';
 
-describe('FluxesService', () => {
+describe('fluxesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [FluxesService]

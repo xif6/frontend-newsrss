@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { BsDropdownToggleDirective } from 'ngx-bootstrap';
 
 import { Fluxes, Items } from '../shared/fluxes';
+import { FluxesService } from './fluxes.service';
 
 @Component({
   selector: 'app-flux',
@@ -12,14 +13,13 @@ import { Fluxes, Items } from '../shared/fluxes';
 export class FluxComponent implements OnInit {
 
   protected form: FormGroup;
-  protected isOpen = false;
 
   @ViewChild('bsDropdownToggle') protected bsDropdownToggle: BsDropdownToggleDirective;
 
   @Input() flux: Fluxes;
   @Input() items: Items;
 
-  protected colors = [
+  protected styles = [
     {
       id: 'default',
       name: 'defaut',
@@ -62,13 +62,13 @@ export class FluxComponent implements OnInit {
     },
   ];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private fluxesService: FluxesService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      'desc': [this.flux.description],
-      'nb_news': [this.flux.flux_nb, Validators.required],
-      'color': [this.flux.style, Validators.required],
+      'description': [this.flux.description],
+      'flux_nb': [this.flux.flux_nb, Validators.required],
+      'style': [this.flux.style, Validators.required],
     });
   }
 
@@ -77,8 +77,11 @@ export class FluxComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
-    this.bsDropdownToggle.onEsc();
+    this.fluxesService.patchFluxSettings(this.form.value)
+      .subscribe(
+        () => this.bsDropdownToggle.onEsc(),
+        err => console.error(err)
+      );
   }
 
 }

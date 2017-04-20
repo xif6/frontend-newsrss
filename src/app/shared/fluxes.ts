@@ -35,3 +35,10 @@ export interface Item {
   description: string;
   date: Date;
 }
+
+export interface FluxSettings {
+  description: boolean;
+  flux_nb: number;
+  style: string;
+}
+

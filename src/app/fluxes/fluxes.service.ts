@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { Fluxes, Items } from '../shared/fluxes';
+import { Fluxes, FluxSettings, Items } from '../shared/fluxes';
 
 
 @Injectable()
@@ -78,6 +78,15 @@ export class FluxesService {
 
   postFlux(q) {
     return this.authHttp.post('/assets/mock-api/empty.json', q)
+      .map(res => res.json())
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+
+  patchFluxSettings(fluxSettings: FluxSettings) {
+    console.log(fluxSettings);
+    return this.authHttp.post('/assets/mock-api/empty.json', fluxSettings)
       .map(res => res.json())
       .catch(error => {
         return Observable.throw(error);

@@ -10,6 +10,14 @@ form.dropdown-menu-right {
   padding: 15px 15px 0;
 }
 
+.form-group {
+  margin-bottom: 5px;
+}
+
+form.dropdown-menu-right {
+  padding: 5px 5px 0;
+}
+
 .dropdown-menu.form-horizontal {
   width: 300px;
 }

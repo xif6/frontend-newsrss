@@ -11,32 +11,32 @@
         <form (ngSubmit)="submit()" [formGroup]="form" *dropdownMenu (click)="onEvent($event)"
               class="dropdown-menu dropdown-menu-right form-horizontal">
 
-          <div class="form-group">
+          <div class="form-group form-group-sm">
             <label for="desc_{{ flux.flux.id }}" class="control-label col-sm-6">Description</label>
             <div class="col-sm-6">
-              <input type="checkbox" formControlName="desc" id="desc_{{ flux.flux.id }}">
+              <input type="checkbox" formControlName="description" id="desc_{{ flux.flux.id }}">
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group form-group-sm">
             <label for="nb_news_{{ flux.flux.id }}" class="control-label col-sm-6">Number of news</label>
             <div class="col-sm-6">
-            <input type="number" min="1" formControlName="nb_news" id="nb_news_{{ flux.flux.id }}"
+            <input type="number" min="1" formControlName="flux_nb" id="nb_news_{{ flux.flux.id }}"
                    class="form-control">
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group form-group-sm">
             <label for="color_{{ flux.flux.id }}" class="control-label col-sm-6">Color</label>
             <div class="col-sm-6">
               <!-- use http://valor-software.com/ng2-select/ Rich for color -->
-              <select class="form-control" formControlName="color" id="color_{{ flux.flux.id }}">
-                <option *ngFor="let color of colors" [value]="color.id">{{ color.name }}</option>
+              <select class="form-control" formControlName="style" id="color_{{ flux.flux.id }}">
+                <option *ngFor="let style of styles" [value]="style.id">{{ style.name }}</option>
               </select>
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group form-group-sm">
             <div class="col-sm-12">
               <button [disabled]="!form.valid || loading" class="form-control btn btn-primary btn-xs pull-right">Save</button>
             </div>
