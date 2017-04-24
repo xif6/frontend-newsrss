@@ -27,7 +27,7 @@ export class AuthService {
     return this.http.post('http://sf28.newsrss.net/api/login_check', body, {headers: headers})
       .map((res: Response) => res.json())
       .do(
-        authResult => { localStorage.setItem('id_token', authResult.token); },
+        authResult => { localStorage.setItem('token', authResult.token); },
         err => { console.error(err); }
       );
   }
