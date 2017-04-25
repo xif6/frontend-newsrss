@@ -44,7 +44,7 @@ export class AuthService {
     return this.http.post('/assets/mock-api/empty.json', body, {headers: headers})
       .map((res: Response) => res.json())
       .do(
-        authResult => { localStorage.setItem('id_token', authResult.token); },
+        authResult => { localStorage.setItem('token', authResult.token); },
         err => { console.error(err); }
       );
   }
@@ -55,7 +55,7 @@ export class AuthService {
 
 
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
   }
 
   openRegister() {
