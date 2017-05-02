@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { Fluxes, FluxSettings, Items } from '../shared/fluxes';
+import { Fluxes, FluxSettings, AllItems, Item } from '../shared/fluxes';
 
 
 @Injectable()
@@ -14,13 +14,15 @@ export class FluxesService {
 
   protected fluxes: Fluxes[];
   protected fluxes$: Observable<Fluxes[]>;
-  protected items: Items[];
-  protected items$: Observable<Items[]>;
+  protected fluxesCache$: Observable<Observable<Fluxes[]>>;
+  protected allItems: AllItems;
+  protected allItems$: Observable<AllItems>;
+  protected allItemsCache$: Observable<Observable<AllItems>>;
 
   constructor(protected authHttp: AuthHttp) {}
 
   clearCache() {
-    this.fluxes = this.items = null;
+    this.fluxes = this.allItems = null;
     return this;
   }
 
@@ -30,51 +32,107 @@ export class FluxesService {
   }
 
   clearCacheItems() {
-    this.items = null;
+    this.allItems = null;
     return this;
   }
 
-  getFluxes(): Observable<Fluxes[]> {
+  getFluxes(): Observable<Observable<Fluxes[]>> {
     if (this.fluxes) {
-      return Observable.of(this.fluxes);
-    } else if (this.fluxes$) {
+      return Observable.of(this.fluxes$);
+    } else if (this.fluxesCache$) {
       // request is in progress
-      return this.fluxes$;
+      return this.fluxesCache$;
     }
 
-    this.fluxes$ = this.authHttp.get('http://sf28.newsrss.net/api/user/fluxes')
+    this.fluxesCache$ = this.authHttp.get('http://sf28.newsrss.net/api/user/fluxes')
       .map(fluxes => {
-        this.fluxes$ = null;
+        this.fluxesCache$ = null;
         this.fluxes = fluxes.json();
-        return this.fluxes;
+        this.fluxes$ = Observable.of(this.fluxes);
+
+        return this.fluxes$;
       })
       .catch(error => {
         return Observable.throw(error);
       });
 
-    return this.fluxes$;
+    return this.fluxesCache$;
   }
 
-  getItems(): Observable<Items[]> {
-    if (this.items) {
-      return Observable.of(this.items);
-    } else if (this.items$) {
+  getItems(fluxId): Observable<Item[]> {
+    return this.authHttp.get('http://sf28.newsrss.net/api/user/item/' + fluxId)
+      .map(fluxes => {
+        this.allItems['flux_' + fluxId] = fluxes.json();
+
+        return this.allItems['flux_' + fluxId];
+      })
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+/*
+
+  getAllItems(): Observable<Observable<Items[]>> {
+
+    return this.authHttp.get('http://sf28.newsrss.net/api/user/items')
+      .map(allItems => {
+        this.allItems = allItems.json();
+
+        this.allItems$ = Observable.of(this.allItems);
+        return this.allItems$;
+      })
+      .catch(error => {
+        return Observable.throw(error);
+      });
+
+  }
+*/
+
+  getAllItems(): Observable<Observable<AllItems>> {
+    if (this.allItems) {
+      return Observable.of(this.allItems$);
+    } else if (this.allItemsCache$) {
       // request is in progress
-      return this.items$;
+      return this.allItemsCache$;
     }
 
-    this.items$ = this.authHttp.get('http://sf28.newsrss.net/api/user/items')
-      .map(items => {
-        this.items$ = null;
-        this.items = items.json();
-        return this.items;
+    this.allItemsCache$ = this.authHttp.get('http://sf28.newsrss.net/api/user/items')
+      .map(allItems => {
+        this.allItemsCache$ = null;
+        this.allItems = allItems.json();
+
+        this.allItems$ = Observable.of(this.allItems);
+        return this.allItems$;
       })
       .catch(error => {
         return Observable.throw(error);
       });
 
-    return this.items$;
+    return this.allItemsCache$;
   }
+/*
+
+  getItems2(): Observable<AllItems> {
+    if (this.allItems) {
+      return Observable.of(this.allItems);
+    } else if (this.allItems$) {
+      // request is in progress
+      return this.allItems$;
+    }
+
+    this.allItems$ = this.authHttp.get('http://sf28.newsrss.net/api/user/items')
+      .map(allItems => {
+        this.allItems$ = null;
+        this.allItems = allItems.json();
+        return this.allItems;
+      })
+      .catch(error => {
+        return Observable.throw(error);
+      });
+
+    return this.allItems$;
+  }
+*/
 
   postFlux(q) {
     return this.authHttp.post('/assets/mock-api/empty.json', q)
@@ -85,7 +143,6 @@ export class FluxesService {
   }
 
   patchFluxSettings(fluxSettings: FluxSettings) {
-    console.log(fluxSettings);
     return this.authHttp.post('/assets/mock-api/empty.json', fluxSettings)
       .map(res => res.json())
       .catch(error => {

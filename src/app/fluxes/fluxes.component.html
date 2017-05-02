@@ -1,10 +1,12 @@
 <h2>FLUXES</h2>
+<a class="btn btn-default btn-xs" (click)="refresh()">
+  <span class="material-icons rotate">refresh</span>
+  Refresh All
+</a>
 <a routerLink="add">Add</a>
 <div class="col-fluid col-fluid-xl-4 col-fluid-lg-3 col-fluid-md-2 col-fluid-sm-1">
 
-
-  <app-flux *ngFor="let flux of fluxes" [flux]="flux" [items]="items"></app-flux>
-  <!--<div *ngFor="let flux of fluxes" [flux]="flux" [items]="items" app-flux class="panel panel-{{ flux.style || 'default'}} col-fluid-cell" id="id-{{ flux.flux.id }}"></div>-->
+  <app-flux *ngFor="let flux of fluxes | async" [flux]="flux" [allItems]="allItems | async | fluxItemsFilter: flux.flux.id"></app-flux>
 
 </div>
 

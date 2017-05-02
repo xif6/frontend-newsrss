@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { BsDropdownToggleDirective } from 'ngx-bootstrap';
+import { Observable } from 'rxjs/Observable';
 
-import { Fluxes, Items } from '../shared/fluxes';
+import { Fluxes, Item } from '../shared/fluxes';
 import { FluxesService } from './fluxes.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class FluxComponent implements OnInit {
   @ViewChild('bsDropdownToggle') protected bsDropdownToggle: BsDropdownToggleDirective;
 
   @Input() flux: Fluxes;
-  @Input() items: Items;
+  @Input() allItems: Item[];
 
   protected styles = [
     {
@@ -80,6 +81,17 @@ export class FluxComponent implements OnInit {
     this.fluxesService.patchFluxSettings(this.form.value)
       .subscribe(
         () => this.bsDropdownToggle.onEsc(),
+        err => console.error(err)
+      );
+  }
+
+  refresh(fluxId) {
+    this.fluxesService.getItems(fluxId)
+      .subscribe(
+        allItems => {
+          this.bsDropdownToggle.onEsc();
+          this.allItems = allItems;
+        },
         err => console.error(err)
       );
   }

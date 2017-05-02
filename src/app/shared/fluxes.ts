@@ -23,10 +23,8 @@ export interface Flux {
 }
 
 
-export interface Items {
-  id: number;
-  items: Item[];
-
+export interface AllItems {
+  [key: string]: Item[];
 }
 
 export interface Item {
