@@ -11,7 +11,7 @@ form.dropdown-menu-right {
 }
 
 .form-group {
-  margin-bottom: 5px;
+  margin: 8px 0;
 }
 
 form.dropdown-menu-right {
@@ -20,6 +20,7 @@ form.dropdown-menu-right {
 
 .dropdown-menu.form-horizontal {
   width: 300px;
+  color: #000;
 }
 
 .col-fluid-cell.panel {

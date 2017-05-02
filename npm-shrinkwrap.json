@@ -344,6 +344,11 @@
       "resolved": "https://registry.npmjs.org/arrify/-/arrify-1.0.1.tgz",
       "dev": true
     },
+    "arrive": {
+      "version": "2.3.1",
+      "from": "arrive@latest",
+      "resolved": "https://registry.npmjs.org/arrive/-/arrive-2.3.1.tgz"
+    },
     "asap": {
       "version": "2.0.5",
       "from": "asap@>=2.0.3 <2.1.0",
@@ -610,6 +615,11 @@
       "version": "3.3.7",
       "from": "bootstrap@>=3.3.7 <4.0.0",
       "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz"
+    },
+    "bootstrap-material-design": {
+      "version": "0.5.10",
+      "from": "bootstrap-material-design@latest",
+      "resolved": "https://registry.npmjs.org/bootstrap-material-design/-/bootstrap-material-design-0.5.10.tgz"
     },
     "boxen": {
       "version": "1.0.0",

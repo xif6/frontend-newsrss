@@ -3,7 +3,7 @@
 
     <a href="{{ flux.flux.site.url }}" target="_blank">{{ flux.flux.name }}</a>
     <div class="pull-right">
-      <a class="material-icons rotate">refresh</a>
+      <a class="material-icons rotate" (click)="refresh(flux.flux.id)">refresh</a>
       <a href="{{ flux.flux.url }}" target="_blank" class="material-icons">rss_feed</a>
 
       <span dropdown>
@@ -11,24 +11,27 @@
         <form (ngSubmit)="submit()" [formGroup]="form" *dropdownMenu (click)="onEvent($event)"
               class="dropdown-menu dropdown-menu-right form-horizontal">
 
-          <div class="form-group form-group-sm">
-            <label for="desc_{{ flux.flux.id }}" class="control-label col-sm-6">Description</label>
-            <div class="col-sm-6">
-              <input type="checkbox" formControlName="description" id="desc_{{ flux.flux.id }}">
+          <div class="form-group">
+            <div class="col-md-offset-5 col-md-7">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" formControlName="description"> Description
+                </label>
+              </div>
             </div>
           </div>
 
-          <div class="form-group form-group-sm">
-            <label for="nb_news_{{ flux.flux.id }}" class="control-label col-sm-6">Number of news</label>
-            <div class="col-sm-6">
+          <div class="form-group">
+            <label for="nb_news_{{ flux.flux.id }}" class="control-label col-sm-5">Number of news</label>
+            <div class="col-sm-7">
             <input type="number" min="1" formControlName="flux_nb" id="nb_news_{{ flux.flux.id }}"
                    class="form-control">
             </div>
           </div>
 
-          <div class="form-group form-group-sm">
-            <label for="color_{{ flux.flux.id }}" class="control-label col-sm-6">Color</label>
-            <div class="col-sm-6">
+          <div class="form-group">
+            <label for="color_{{ flux.flux.id }}" class="control-label col-sm-5">Color</label>
+            <div class="col-sm-7">
               <!-- use http://valor-software.com/ng2-select/ Rich for color -->
               <select class="form-control" formControlName="style" id="color_{{ flux.flux.id }}">
                 <option *ngFor="let style of styles" [value]="style.id">{{ style.name }}</option>
@@ -38,7 +41,7 @@
 
           <div class="form-group form-group-sm">
             <div class="col-sm-12">
-              <button [disabled]="!form.valid || loading" class="form-control btn btn-primary btn-xs pull-right">Save</button>
+              <button [disabled]="!form.valid || loading" class="btn btn-primary pull-right">Save</button>
             </div>
           </div>
         </form>
@@ -49,7 +52,7 @@
 
   <div class="panel-body">
 
-    <div *ngFor="let item of (items | fluxItemsFilter: flux.flux.id)">
+    <div *ngFor="let item of allItems">
       <a href="{{ item.url }}" target="_blank">
         <span>{{ item.date  | date: 'dd/MM HH:mm' }} : </span>
         {{ item.title }}
