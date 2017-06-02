@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.material-icons {
+  vertical-align: text-top;
+}
+
 form.dropdown-menu-right {
   padding: 15px 15px 0;
 }
@@ -150,38 +154,8 @@ form.dropdown-menu-right {
   vertical-align: middle;
 }
 
-.panel > .panel-body span {
-  font-size: .8em;
-  color: #777777;
-}
-
-.panel > .panel-body .today {
-  color: #000;
-  font-weight: bold;
-}
-
-.panel > .panel-body .separator {
-  border-top: 1px solid #bdbdbd;
-}
-
-.panel > .panel-body a {
-  color: #000;
-}
-
-.panel > .panel-body a:active,
-.panel > .panel-body a:focus,
-.panel > .panel-body a:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #9C27B0;
-}
-
-.panel > .panel-body a:visited span {
-  color: #bdbdbd;
-}
-.panel > .panel-body a:visited {
-  color: #bdbdbd;
-  text-decoration: none;
+.panel > .panel-body {
+  padding: 6px;
 }
 
 .panel-heading {

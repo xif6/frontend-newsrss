@@ -1,0 +1,15 @@
+<div *ngIf="!item.read" class="item">
+  <a href="{{ item.url }}" target="_blank">
+    <span class="date">{{ item.date  | date: 'dd/MM HH:mm' }} : </span>
+    {{ item.title }}
+  </a>
+
+  <span class="material-icons"><!--
+            --><a title="Read later" (click)="addBookmark(item)" [hidden]="item.bookmark">bookmark_border</a><!--
+            --><a title="Read later" (click)="removeBookmark(item)" [hidden]="!item.bookmark">bookmark</a><!--
+            --><a title="Save" (click)="addSave(item)" [hidden]="item.save">star_border</a><!--
+            --><a title="Save" (click)="removeSave(item)" [hidden]="!item.save">star</a><!--
+            --><a title="Mark read" (click)="read(item)">check</a><!--
+          --></span>
+  <!--<span class="material-icons">clear</span>-->
+</div>

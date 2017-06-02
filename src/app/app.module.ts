@@ -17,6 +17,7 @@ import { FluxesService } from './fluxes/fluxes.service';
 import { FluxComponent } from './fluxes/flux.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthModule } from './auth/auth.module';
+import { ItemComponent } from './fluxes/item.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthModule } from './auth/auth.module';
     FluxItemsFilterPipe,
     FluxComponent,
     AuthComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,

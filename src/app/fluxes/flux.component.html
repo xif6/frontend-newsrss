@@ -52,12 +52,11 @@
 
   <div class="panel-body">
 
-    <div *ngFor="let item of allItems">
-      <a href="{{ item.url }}" target="_blank">
-        <span>{{ item.date  | date: 'dd/MM HH:mm' }} : </span>
-        {{ item.title }}
-      </a>
-    </div>
-
+    <app-item *ngFor="let item of allItems; trackBy: trackByUrl" [item]="item"></app-item>
+<!--
+    <template ngFor let-item [ngForOf]="allItems" [ngForTrackBy]="trackByUrl">
+      <app-item [item]="item"></app-item>
+    </template>
+-->
   </div>
 </div>

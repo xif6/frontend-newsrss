@@ -10,7 +10,7 @@ import { AuthComponent } from './auth/auth.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  title = 'NewsRSS';
   @ViewChild('auth') protected auth: AuthComponent;
 
   constructor(protected authService: AuthService, protected router: Router) {}

@@ -143,7 +143,47 @@ export class FluxesService {
   }
 
   patchFluxSettings(fluxSettings: FluxSettings) {
-    return this.authHttp.post('/assets/mock-api/empty.json', fluxSettings)
+    return this.authHttp.patch('/assets/mock-api/empty.json', fluxSettings)
+      .map(res => res.json())
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+
+  postBookmark(item: Item) {
+    return this.authHttp.post('/assets/mock-api/empty.json', item.url)
+      .map(res => res.json())
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+
+  deleteBookmark(item: Item) {
+    return this.authHttp.delete('/assets/mock-api/empty.json', item.url)
+      .map(res => res.json())
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+
+  postSave(item: Item) {
+    return this.authHttp.post('/assets/mock-api/empty.json', item.url)
+      .map(res => res.json())
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+
+  deleteSave(item: Item) {
+    return this.authHttp.delete('/assets/mock-api/empty.json', item.url)
+      .map(res => res.json())
+      .catch(error => {
+        return Observable.throw(error);
+      });
+  }
+
+  read(item: Item) {
+    return this.authHttp.delete('/assets/mock-api/empty.json', item.url)
       .map(res => res.json())
       .catch(error => {
         return Observable.throw(error);

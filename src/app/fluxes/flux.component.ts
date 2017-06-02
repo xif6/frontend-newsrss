@@ -96,4 +96,58 @@ export class FluxComponent implements OnInit {
       );
   }
 
+  trackByUrl(index: number, item: Item): string {
+    return item.url;
+  }
+
+  addBookmark (item: Item) {
+    this.fluxesService.postBookmark(item)
+      .subscribe(
+        () => {
+          item.bookmark = true;
+        },
+        err => console.error(err)
+      );
+  }
+
+  removeBookmark (item: Item) {
+    this.fluxesService.deleteBookmark(item)
+      .subscribe(
+        () => {
+          item.bookmark = false;
+        },
+        err => console.error(err)
+      );
+  }
+
+  addSave (item: Item) {
+    this.fluxesService.postSave(item)
+      .subscribe(
+        () => {
+          item.save = true;
+        },
+        err => console.error(err)
+      );
+  }
+
+  removeSave (item: Item) {
+    this.fluxesService.deleteSave(item)
+      .subscribe(
+        () => {
+          item.save = false;
+        },
+        err => console.error(err)
+      );
+  }
+
+  read (item: Item) {
+    this.fluxesService.read(item)
+      .subscribe(
+        () => {
+          item.read = true;
+        },
+        err => console.error(err)
+      );
+  }
+
 }

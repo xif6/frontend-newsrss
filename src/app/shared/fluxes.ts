@@ -32,6 +32,9 @@ export interface Item {
   url: string;
   description: string;
   date: Date;
+  bookmark: boolean;
+  save: boolean;
+  read: boolean;
 }
 
 export interface FluxSettings {

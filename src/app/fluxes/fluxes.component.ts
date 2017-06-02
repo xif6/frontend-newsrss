@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { FluxesService } from './fluxes.service';
-import { AllItems, Fluxes } from '../shared/fluxes';
+import { AllItems, Flux, Fluxes } from '../shared/fluxes';
 
 @Component({
   selector: 'app-fluxes',
@@ -35,4 +35,7 @@ export class FluxesComponent implements OnInit {
     this.ngOnInit();
   }
 
+  trackById(index: number, flux: Flux): number {
+    return flux.id;
+  }
 }
